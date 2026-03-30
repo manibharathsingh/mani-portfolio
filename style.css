@@ -704,6 +704,68 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 }
 
+
+/* --- Refined Mobile Responsiveness --- */
+
+@media (max-width: 768px) {
+  /* Ensure the hero section doesn't cut off content on short screens */
+  .hero {
+    min-height: auto;
+    padding-block: 6rem 4rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* Prevent long names from breaking the layout */
+  .hero-name {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: 1.1;
+  }
+
+  /* Make buttons easier to tap (Touch Target) */
+  .hero-cta {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%; /* Stack buttons on small mobile */
+    justify-content: center;
+    padding: 1rem; 
+  }
+
+  /* Adjust About Stats for 2x2 grid on mobile */
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller padding for very narrow screens */
+  .section {
+    padding-block: 4rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Stack stats vertically on the smallest screens */
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ensure project cards don't feel too cramped */
+  .project-card {
+    padding: 1.5rem;
+  }
+}
 /* ── 14. SCROLLBAR ────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--clr-bg); }
